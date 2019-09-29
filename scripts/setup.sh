@@ -23,14 +23,14 @@ echo "******************** change root ********************"
 cp /etc/resolv.conf ./edit/etc/
 
 mount --bind /dev/ ./edit/dev
-cp custom.sh ./edit
+cp /scripts/custom.sh ./edit
 cp /etc/apt/sources.list ./edit/etc/apt/sources.list
 chroot ./edit ./custom.sh
 
 cd ~/output
 rm -rf ./edit/custom.sh
 umount ./edit/dev
-# echo "******************** gen manifest ********************"
+
 
 chmod +w extract/install/filesystem.manifest
 
